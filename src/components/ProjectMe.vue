@@ -89,7 +89,7 @@ export default {
           image: "/Assets/kasir-app.jpg",
           demo: "#",
           github: "#",
-          tags: ["PHP", "Laravel", "Tailwind CSS"],
+          tags: ["PHP", "Laravel", "Bootstrap", "MySQL"],
         },
         {
           id: 4,

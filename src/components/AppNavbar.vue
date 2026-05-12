@@ -1,8 +1,8 @@
-
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="navbar-inner">
-      <a href="#home" class="logo" @click.prevent="scrollTo('home')">
+      <a href="#" class="logo" @click.prevent="scrollTo('home')">
+        <span class="logo-text"><span class="dot"></span></span>
       </a>
 
       <ul class="nav-links">
@@ -13,7 +13,7 @@
             :class="{ active: activeSection === item.id }"
             @click.prevent="scrollTo(item.id)"
           >
-            <span class="nav-num"></span>{{ item.label }}
+            {{ item.label }}
           </a>
         </li>
       </ul>
@@ -33,9 +33,10 @@
           :key="index"
           :href="item.href"
           class="mobile-link"
+          :class="{ active: activeSection === item.id }"
           @click.prevent="mobileNav(item.id)"
         >
-          <span class="nav-num"></span>{{ item.label }}
+          {{ item.label }}
         </a>
       </div>
     </transition>
@@ -51,10 +52,11 @@ export default {
       menuOpen: false,
       activeSection: 'home',
       navItems: [
-        { label: 'Services', href: '#services', id: 'services' },
-        { label: 'About',   href: '#about',    id: 'about'    },
-        { label: 'Project',   href: '#project',id: 'project'},
-        { label: 'Contact', href: '#contact',  id: 'contact'  },
+        { label: 'Home',         href: '#home',         id: 'home'         },
+        { label: 'About',        href: '#about',        id: 'about'        },
+        { label: 'Projects',     href: '#project',      id: 'project'      },
+        { label: 'Certificates', href: '#certificates', id: 'certificates' },
+        { label: 'Contact',      href: '#contact',      id: 'contact'      },
       ],
     };
   },
@@ -69,10 +71,10 @@ export default {
       this.isScrolled = window.scrollY > 20;
 
       // Highlight active section
-      const sections = ['home', 'services', 'about', 'contact'];
+      const sections = ['home', 'about', 'project', 'certificates', 'contact'];
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 100) {
+        if (el && window.scrollY >= el.offsetTop - 150) {
           this.activeSection = id;
           break;
         }
@@ -80,7 +82,12 @@ export default {
     },
     scrollTo(id) {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+      if (el) {
+        window.scrollTo({
+          top: el.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      }
       this.menuOpen = false;
     },
     toggleMenu() {
@@ -101,23 +108,24 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: transparent;
+  transition: all 0.4s ease;
+  padding: 20px 0;
 }
 
 .navbar.scrolled {
-  border-bottom-color: #e2e8f0;
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.04);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 15px 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px;
-  height: 64px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -126,32 +134,25 @@ export default {
 /* Logo */
 .logo {
   text-decoration: none;
-}
-
-.logo-box {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background: #2563eb;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  border-radius: 10px;
-  transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.logo:hover .logo-box {
-  background: #1d4ed8;
-  transform: rotate(-3deg) scale(1.05);
+.logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.dot {
+  color: var(--text-secondary);
 }
 
 /* Nav links */
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 40px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -159,216 +160,123 @@ export default {
 
 .nav-link {
   text-decoration: none;
-  color: #64748b;
-  font-family: 'Inter', sans-serif;
+  color: var(--text-secondary);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.01em;
-  transition: color 0.25s ease;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
   position: relative;
-  padding-bottom: 2px;
+  text-transform: uppercase;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -6px;
   left: 0;
   right: 0;
   height: 2px;
-  background: #2563eb;
+  background: var(--text-primary);
   transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-  border-radius: 1px;
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #0f172a;
+  color: var(--text-primary);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
   transform: scaleX(1);
-}
-
-.nav-num {
-  color: #2563eb;
-  font-weight: 600;
-  margin-right: 3px;
-}
-
-/* Auth buttons */
-.nav-auth {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-login-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 20px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.nav-login-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
-}
-
-.nav-settings-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 7px 14px;
-  background: #eff6ff;
-  color: #2563eb;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  border: 1px solid #dbeafe;
-}
-
-.nav-settings-btn svg {
-  width: 16px;
-  height: 16px;
-}
-
-.nav-settings-btn:hover {
-  background: #dbeafe;
-}
-
-.nav-logout-btn {
-  padding: 7px 14px;
-  background: none;
-  color: #dc2626;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  border: 1px solid #fecaca;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.nav-logout-btn:hover {
-  background: #fef2f2;
+  transform-origin: left;
 }
 
 /* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 5px;
+  z-index: 1001;
 }
 
 .hamburger span {
   display: block;
-  width: 22px;
+  width: 28px;
   height: 2px;
-  background: #334155;
+  background: var(--text-primary);
   border-radius: 2px;
-  transition: all 0.25s ease;
-  transform-origin: center;
+  transition: all 0.3s ease;
+  transform-origin: left;
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
   opacity: 0;
-  transform: scaleX(0);
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 /* Mobile menu */
 .mobile-menu {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid #f1f5f9;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
   display: flex;
   flex-direction: column;
+  padding: 20px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-link {
   text-decoration: none;
-  color: #334155;
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
+  color: var(--text-secondary);
+  font-size: 16px;
   font-weight: 500;
-  padding: 16px 32px;
-  border-bottom: 1px solid #f1f5f9;
-  transition: background 0.2s ease, color 0.2s ease;
+  padding: 15px 40px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.mobile-link:hover {
-  background: #f1f5f9;
-  color: #2563eb;
-}
-
-.mobile-auth {
-  border-top: 2px solid #e2e8f0;
-}
-
-.mobile-auth-link {
-  font-weight: 600;
-}
-
-.mobile-logout {
-  color: #dc2626;
-}
-
-.mobile-logout:hover {
-  background: #fef2f2;
-  color: #dc2626;
+.mobile-link:hover, .mobile-link.active {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding-left: 50px;
 }
 
 /* Slide transition */
 .slide-down-enter-active,
 .slide-down-leave-active {
-  transition: all 0.25s ease;
+  transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .slide-down-enter-from,
 .slide-down-leave-to {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-20px);
 }
 
 @media (max-width: 768px) {
   .navbar-inner {
-    padding: 0 24px;
+    padding: 0 20px;
   }
-
   .nav-links {
     display: none;
   }
-
-  .nav-auth {
-    display: none;
-  }
-
   .hamburger {
     display: flex;
   }

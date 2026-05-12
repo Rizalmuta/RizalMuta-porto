@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     loadAnimation() {
-      const lottieJsonPath = '/src/public/Assets/proces.json'
+      const lottieJsonPath = '/Assets/proces.json'
 
       this.anim = lottie.loadAnimation({
         container: this.$refs.lottieContainer,

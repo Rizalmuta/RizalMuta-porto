@@ -1,32 +1,43 @@
 <template>
   <section class="about" id="about">
     <div class="about-inner">
-      <div class="about-body">
-        <!-- Bio col -->
-        <div class="bio-col">
-          <h2 class="about-title">About Me</h2>
-          <p class="about-bio">
-            My name is Muhamad Rizal Mutakin, a Software and Game Development student with a keen interest in web and mobile application development. 
-            Currently, I focus on front-end and mobile development, particularly in creating responsive and user-friendly application displays.
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-content">
+        <div class="bio-section fade-in">
+          <p class="bio-text">
+            I am <span class="highlight">Muhamad Rizal Mutakin</span>, , a fresh graduate in Software and Game Development with a strong passion for frontend and web development using Vue.js and Laravel, as well as mobile application development using Flutter. I focus on creating responsive, user-centric, and performance-driven digital experiences that combine clean design with functional usability.
           </p>
-          <p class="about-bio">
-            I have a good understanding of basic programming concepts and continue to develop my skills by learning the latest technologies. 
-            I am committed to writing clean, effective code and ensuring that applications function optimally according to user needs.
+          <p class="bio-text">
+           With a solid foundation in modern web technologies, I continuously explore new frameworks, tools, and best practices to enhance my technical skills and deliver applications that are both visually engaging and structurally reliable.
           </p>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3 class="stat-num">10+</h3>
+              <p class="stat-label">Projects Completed School</p>
+            </div>
+            <div class="stat-card">
+              <h3 class="stat-num">3</h3>
+              <p class="stat-label">Years Learning</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Skills col -->
-        <div class="skills-col">
-          <h4 class="skills-heading">My Expertise</h4>
-          <div class="skills-grid">
-            <div
-              v-for="skill in skills"
-              :key="skill.name"
-              class="skill-pill"
-              :style="{ '--accent': skill.color }"
-            >
-              <font-awesome-icon :icon="skill.icon" class="skill-icon" />
-              {{ skill.name }}
+        <div class="skills-section slide-up">
+          <h3 class="skills-title">My Toolkit</h3>
+          <div class="skills-container">
+            <div class="skill-category" v-for="(category, index) in skillCategories" :key="index">
+              <h4 class="category-name">{{ category.name }}</h4>
+              <div class="skill-tags">
+                <div class="skill-tag" v-for="skill in category.skills" :key="skill.name">
+                  <i :class="skill.icon"></i>
+                  <span>{{ skill.name }}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -40,136 +51,208 @@ export default {
   name: 'AboutMe',
   data() {
     return {
-   skills: [
-        { name: 'Html',     color: '#42b883', iconClass: 'devicon-html5-plain colored'          },
-        { name: 'Flutter',    color: '#61dafb', iconClass: 'devicon-flutter-plain'        },
-        { name: 'Figma',      color: '#f24e1e', iconClass: 'devicon-figma-plain'          },
-        { name: 'PHP',        color: '#68a063', iconClass: 'devicon-php-plain'            },
-        { name: 'Laravel 12',    color: '#3178c6', iconClass: 'devicon-laravel-plain'        },
-        { name: 'Vue.js 3',   color: '#e84855', iconClass: 'devicon-vuejs-plain colored'  },
-        { name: 'Postman',    color: '#ff9800', iconClass: 'devicon-postman-plain'        },
-        { name: 'MySQL',      color: '#336791', iconClass: 'devicon-mysql-plain'          },
-        { name: 'Git',        color: '#f05032', iconClass: 'devicon-git-plain colored'    },
-        { name: 'Github',     color: '#38bdf8', iconClass: 'devicon-github-original'      },
-        { name: 'Gitlab',     color: '#38bdf8', iconClass: 'devicon-gitlab-plain'      },
-        { name: 'Bootstrap 5',  color: '#38bdf8', iconClass: 'devicon-bootstrap-plain'      },
-        { name: 'Css',  color: '#38bdf8', iconClass: 'devicon-css3-plain colored'      },
-      ],
+      skillCategories: [
+        {
+          name: 'Frontend Development',
+          skills: [
+            { name: 'Vue.js', icon: 'devicon-vuejs-plain' },
+            { name: 'HTML', icon: 'devicon-html5-plain' },
+            { name: 'CSS', icon: 'devicon-css3-plain' },
+            { name: 'Bootstrap', icon: 'devicon-bootstrap-plain' },
+          ]
+        },
+        {
+          name: 'Mobile Development',
+          skills: [
+            { name: 'Flutter', icon: 'devicon-flutter-plain' },
+          ]
+        },
+        {
+          name: 'Backend & Database',
+          skills: [
+            { name: 'PHP', icon: 'devicon-php-plain' },
+            { name: 'Laravel', icon: 'devicon-laravel-original' },
+            { name: 'MySQL', icon: 'devicon-mysql-plain' },
+          ]
+        },
+        {
+          name: 'Tools & Design',
+          skills: [
+            { name: 'Figma', icon: 'devicon-figma-plain' },
+            { name: 'Git', icon: 'devicon-git-plain' },
+            { name: 'GitHub', icon: 'devicon-github-original' },
+            { name: 'GitLab', icon: 'devicon-gitlab-plain' },
+            { name: 'Postman', icon: 'devicon-postman-plain' },
+            { name: 'Trello', icon: 'devicon-trello-plain' },
+          ]
+        }
+      ]
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
 .about {
-  background: #f8fafc;
-  padding: 120px 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  padding: 100px 0;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .about-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 40px;
+  width: 100%;
 }
 
-.about-title {
+.section-header {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-title {
   font-size: 40px;
   font-weight: 800;
-  color: #0f172a;
-  margin-bottom: 32px;
-  letter-spacing: -0.03em;
-  position: relative;
-  display: inline-block;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
 }
 
-.about-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 56px;
-  height: 3px;
-  background: #2563eb;
+.section-line {
+  width: 60px;
+  height: 4px;
+  background: var(--text-primary);
   border-radius: 2px;
 }
 
-.about-bio {
-  font-size: 15px;
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.bio-text {
+  font-size: 16px;
   line-height: 1.8;
-  color: #475569;
-  margin-bottom: 20px;
-  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
 }
 
-.skills-heading {
-  font-size: 12px;
+.highlight {
+  color: var(--text-primary);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: #94a3b8;
-  margin-bottom: 20px;
 }
 
-.skills-grid {
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-primary);
+}
+
+.stat-num {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.skills-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.category-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
-.skill-pill {
+.skill-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  border-radius: 10px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  font-size: 13px;
+  padding: 10px 18px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
   font-weight: 500;
-  color: #334155;
-  transition: all 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.skill-pill:hover {
+.skill-tag i {
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  border-color: #2563eb;
-  color: #2563eb;
 }
 
-.skill-icon {
-  font-size: 16px;
-  color: var(--accent, #2563eb);
-  width: 18px;
-  text-align: center;
+.skill-tag:hover i {
+  color: var(--bg-primary);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .about-body {
+@media (max-width: 968px) {
+  .about-content {
     grid-template-columns: 1fr;
-    gap: 56px;
-  }
-  
-  .about-title {
-    font-size: 34px;
+    gap: 60px;
   }
 }
 
-@media (max-width: 480px) {
-  .about-inner {
-    padding: 0 24px;
-  }
-  
-  .skill-pill {
-    padding: 7px 12px;
-    font-size: 12px;
-  }
-  
-  .skill-icon {
-    font-size: 14px;
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

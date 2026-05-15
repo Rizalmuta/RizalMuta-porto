@@ -84,7 +84,7 @@ export default {
           category: "Web",
           title: "Fuel Purchases Website",
           description: "A website for buying fuel with easy transactions and fuel price information",
-          image: "/Assets/Fuel.jpg",
+          image: "/Assets/shell.jpg",
           tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
         },
         {
@@ -92,7 +92,7 @@ export default {
           category: "Web",
           title: "Motorbike Rental website",
           description: "An online motorbike rental website with booking and payment features.",
-          image: "/Assets/motorent.jpg",
+          image: "/Assets/RentalMotor.jpg",
           tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
         },
         {
@@ -100,7 +100,7 @@ export default {
           category: "Web",
           title: "IndoJune cashier website",
           description: "A cashier system for managing products, sales transactions, and reports.",
-          image: "/Assets/indoap.jpg",
+          image: "/Assets/kasir-app.jpg",
           tags: ["PHP", "Laravel", "Bootstrap", "CSS", "MySQL"],
         },
         // Mobile Projects

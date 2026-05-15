@@ -165,8 +165,7 @@ export default {
   },
   methods: {
     viewDetails(project) {
-      console.log("View details:", project);
-      // Tambahkan modal atau route nanti
+      console.log("Views Only", project);
     },
   },
 };

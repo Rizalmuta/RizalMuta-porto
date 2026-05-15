@@ -9,7 +9,7 @@
       <div class="about-content">
         <div class="bio-section fade-in">
           <p class="bio-text">
-            I am <span class="highlight">Muhamad Rizal Mutakin</span>, , a fresh graduate in Software and Game Development with a strong passion for frontend and web development using Vue.js and Laravel, as well as mobile application development using Flutter. I focus on creating responsive, user-centric, and performance-driven digital experiences that combine clean design with functional usability.
+            I am <span class="highlight">Muhamad Rizal Mutakin</span>, a fresh graduate in Software and Game Development with a strong passion for frontend and web development using Vue.js and Laravel, as well as mobile application development using Flutter. I focus on creating responsive, user-centric, and performance-driven digital experiences that combine clean design with functional usability.
           </p>
           <p class="bio-text">
            With a solid foundation in modern web technologies, I continuously explore new frameworks, tools, and best practices to enhance my technical skills and deliver applications that are both visually engaging and structurally reliable.

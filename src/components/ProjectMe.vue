@@ -1,52 +1,73 @@
 <template>
   <section class="portfolio-section" id="project">
     <div class="portfolio-inner">
+
+      <!-- Section Header -->
       <div class="section-header">
         <h2 class="section-title">Selected Works</h2>
         <div class="section-line"></div>
       </div>
 
-      <!-- Filter -->
-      <div class="filter-container fade-in delay-1">
-        <button
-          v-for="cat in ['All', 'Web', 'Mobile']"
-          :key="cat"
-          class="filter-btn"
-          :class="{ active: activeFilter === cat }"
-          @click="activeFilter = cat"
-        >
-          {{ cat }}
-        </button>
-      </div>
-
-      <!-- Grid -->
-      <transition-group name="project-list" tag="div" class="projects-grid">
-        <div
-          v-for="project in filteredProjects"
-          :key="project.id"
-          class="project-card slide-up"
-        >
-          <div class="card-image-wrapper">
-            <img :src="project.image" :alt="project.title" class="card-image" />
-            <div class="card-overlay">
-              <div class="overlay-actions">
-                <button class="action-btn" @click="viewDetails(project)">
-                  <i class="ph ph-eye"></i> Views Only
-                </button>
+      <!-- ==================== WEB PROJECTS ==================== -->
+      <div class="category-section">
+        <h3 class="category-title">Web Development</h3>
+        <div class="projects-grid web-grid">
+          <div
+            v-for="project in webProjects"
+            :key="project.id"
+            class="project-card"
+          >
+            <div class="card-image-wrapper">
+              <img :src="project.image" :alt="project.title" class="card-image" />
+              <div class="card-overlay">
+                <div class="overlay-actions">
+                  <button class="action-btn" @click="viewDetails(project)">
+                    <i class="ph ph-eye"></i> View Details
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card-content">
-            <div class="card-tags">
-              <span v-for="tag in project.tags" :key="tag" class="tag">{{
-                tag
-              }}</span>
+            <div class="card-content">
+              <div class="card-tags">
+                <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
+              </div>
+              <h3 class="card-title">{{ project.title }}</h3>
+              <p class="card-desc">{{ project.description }}</p>
             </div>
-            <h3 class="card-title">{{ project.title }}</h3>
-            <p class="card-desc">{{ project.description }}</p>
           </div>
         </div>
-      </transition-group>
+      </div>
+
+      <!-- ==================== MOBILE PROJECTS ==================== -->
+      <div class="category-section">
+        <h3 class="category-title">Mobile Applications</h3>
+        <div class="projects-grid mobile-grid">
+          <div
+            v-for="project in mobileProjects"
+            :key="project.id"
+            class="project-card mobile-card"
+          >
+            <div class="card-image-wrapper mobile-image-wrapper">
+              <img :src="project.image" :alt="project.title" class="card-image" />
+              <div class="card-overlay">
+                <div class="overlay-actions">
+                  <button class="action-btn" @click="viewDetails(project)">
+                    <i class="ph ph-eye"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-tags">
+                <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
+              </div>
+              <h3 class="card-title">{{ project.title }}</h3>
+              <p class="card-desc">{{ project.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
@@ -56,119 +77,98 @@ export default {
   name: "ProjectMe",
   data() {
     return {
-      activeFilter: "All",
       projects: [
+        // Web Projects
         {
           id: 1,
           category: "Web",
           title: "Fuel Purchases Website",
-          description:
-            "A comprehensive website for fuel purchases with pricing, transaction handling, and automated data management features.",
+          description: "A website for buying fuel with easy transactions and fuel price information",
           image: "/Assets/shell.jpg",
-          demo: "#",
-          github: "#",
-          tags: ["PHP", "OOP", "HTML", "CSS"],
+          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
         },
         {
           id: 2,
           category: "Web",
           title: "Motorbike Rental website",
-          description:
-            "An organized system for renting motorbikes online, managing availability, pricing, and seamless rental transactions.",
+          description: "An online motorbike rental website with booking and payment features.",
           image: "/Assets/RentalMotor.jpg",
-          demo: "#",
-          github: "#",
-          tags: ["PHP", "OOP", "HTML", "CSS"],
+          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
         },
         {
           id: 3,
           category: "Web",
           title: "IndoJune cashier website",
-          description:
-            "A functional point-of-sale system for stores featuring product management, transactions, and automated reporting.",
+          description: "A cashier system for managing products, sales transactions, and reports.",
           image: "/Assets/kasir-app.jpg",
-          demo: "#",
-          github: "#",
-          tags: ["PHP", "Laravel", "Bootstrap", "MySQL"],
+          tags: ["PHP", "Laravel", "Bootstrap", "CSS", "MySQL"],
         },
+        // Mobile Projects
         {
           id: 4,
           category: "Mobile",
           title: "Court Booking App",
-          description:
-            "A mobile application interface focused on clean, modern aesthetics for a sports court reservation system.",
+          description: "A mobile app for booking sports courts with a clean and modern design.",
           image: "/Assets/court-design.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 5,
           category: "Mobile",
           title: "Haihai Chat Box App",
-          description:
-            "A social communication app with smooth transitions, modern UI styling, and robust API integration.",
+          description: "A chat application with modern design and smooth user experience.",
           image: "/Assets/haihai-home.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 6,
           category: "Mobile",
           title: "WCP Mobile App",
-          description:
-            "Enterprise mobile solution with intuitive design for streamlined internal operations.",
+          description: "A mobile app designed to help manage company operations efficiently",
           image: "/Assets/wcp-slash.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 7,
           category: "Mobile",
           title: "SnapFlow App",
-          description:
-            "A fluid and seamless mobile application prototype emphasizing UX flows and fast interactions.",
+          description: "A modern mobile app prototype focused on smooth and simple interactions.",
           image: "/Assets/snap-slash.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma"],
         },
         {
           id: 8,
           category: "Mobile",
           title: "Yantek App",
-          description:
-            "Technical service management app built for field workers to manage tasks effectively.",
+          description: "A task management app for field workers to handle daily jobs easily.",
           image: "/Assets/yantek-home.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 9,
           category: "Mobile",
           title: "Weather App",
-          description:
-            "A sleek mobile weather application providing real-time data visualization and forecasts.",
+          description: "A weather application that shows real-time weather information and forecasts.",
           image: "/Assets/Weather-App.jpg",
-          demo: "#",
-          github: "#",
           tags: ["Flutter", "Figma", "API"],
         },
       ],
     };
   },
   computed: {
-    filteredProjects() {
-      if (this.activeFilter === "All") {
-        return this.projects;
-      }
-      return this.projects.filter((p) => p.category === this.activeFilter);
+    webProjects() {
+      return this.projects.filter((p) => p.category === "Web");
+    },
+    mobileProjects() {
+      return this.projects.filter((p) => p.category === "Mobile");
     },
   },
-  methods: {},
+  methods: {
+    viewDetails(project) {
+      console.log("View details:", project);
+      // Tambahkan modal atau route nanti
+    },
+  },
 };
 </script>
 
@@ -207,49 +207,40 @@ export default {
   border-radius: 2px;
 }
 
-/* Filter */
-.filter-container {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
+/* Category Title */
+.category-section {
+  margin-bottom: 80px;
 }
 
-.filter-btn {
-  background: transparent;
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.filter-btn:hover {
-  border-color: var(--text-primary);
+.category-title {
+  font-size: 28px;
+  font-weight: 700;
   color: var(--text-primary);
-}
-
-.filter-btn.active {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  border-color: var(--text-primary);
+  margin-bottom: 32px;
+  padding-left: 8px;
+  border-left: 4px solid var(--text-primary);
 }
 
 /* Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 30px;
 }
 
+/* Web Grid - Landscape */
+.web-grid {
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+/* Mobile Grid - Portrait */
+.mobile-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Card Style Umum */
 .project-card {
   background: var(--bg-secondary);
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -263,10 +254,14 @@ export default {
 
 .card-image-wrapper {
   position: relative;
-  width: 100%;
-  padding-top: 60%; /* 16:9 Aspect Ratio Approx */
+  width: 110%;
+  padding-top: 70%; /* Landscape untuk Web */
   overflow: hidden;
   background: var(--bg-tertiary);
+}
+
+.mobile-image-wrapper {
+  padding-top: 158%; /* Portrait lebih tinggi untuk Mobile App */
 }
 
 .card-image {
@@ -289,7 +284,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -303,9 +298,6 @@ export default {
 }
 
 .overlay-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   transform: translateY(20px);
   transition: transform 0.4s ease;
 }
@@ -319,24 +311,23 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   background: var(--text-primary);
   color: var(--bg-primary);
   border: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 160px;
+  width: 180px;
 }
 
 .action-btn:hover {
   transform: scale(1.05);
-  background: var(--accent-hover);
 }
 
+/* Card Content */
 .card-content {
   padding: 24px;
 }
@@ -373,26 +364,45 @@ export default {
   color: var(--text-secondary);
 }
 
-/* Vue Transition Group */
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .portfolio-inner {
+    padding: 0 20px;
+  }
+
+  .section-title {
+    font-size: 34px;
+  }
+
+  .category-title {
+    font-size: 24px;
+  }
+
+  .projects-grid {
+    gap: 32px;
+  }
+
+  .web-grid,
+  .mobile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-btn {
+    width: 100%;
+    max-width: none;
+    padding: 14px 24px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-image-wrapper {
+    padding-top: 108%; /* Sedikit lebih pendek di desktop agar tetap rapi */
+  }
+}
+
+/* Vue Transition (opsional) */
 .project-list-enter-active,
 .project-list-leave-active {
   transition: all 0.4s ease;
-}
-.project-list-enter-from,
-.project-list-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.project-list-leave-active {
-  position: absolute;
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .filter-container {
-    flex-wrap: wrap;
-  }
 }
 </style>

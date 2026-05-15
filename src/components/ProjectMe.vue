@@ -22,7 +22,7 @@
               <div class="card-overlay">
                 <div class="overlay-actions">
                   <button class="action-btn" @click="viewDetails(project)">
-                    <i class="ph ph-eye"></i> View Details
+                    <i class="ph ph-eye"></i> Views Only
                   </button>
                 </div>
               </div>

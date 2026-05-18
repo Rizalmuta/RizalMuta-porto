@@ -17,7 +17,7 @@
           
           <div class="stats-grid">
             <div class="stat-card">
-              <h3 class="stat-num">10+</h3>
+              <h3 class="stat-num">15+</h3>
               <p class="stat-label">Projects Completed School</p>
             </div>
             <div class="stat-card">

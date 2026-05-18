@@ -14,7 +14,7 @@
             <span>View Projects</span>
             <i class="ph ph-arrow-right"></i>
           </button>
-          <a href="/cv.pdf" target="_blank" class="btn btn-secondary">
+          <a href="/Resume.pdf" target="_blank" class="btn btn-secondary">
             <span>Download CV</span>
             <i class="ph ph-download-simple"></i>
           </a>

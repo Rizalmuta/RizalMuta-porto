@@ -103,6 +103,15 @@ export default {
           image: "/Assets/kasir-app.jpg",
           tags: ["PHP", "Laravel", "Bootstrap", "CSS", "MySQL"],
         },
+
+          {
+          id: 4,
+          category: "Web",
+          title: "Haihai Website - Internship Project",
+          description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
+          image: "/Assets/haihai-web.jpg",
+          tags: ["Laravel", "Slicing"],
+        },
         // Mobile Projects
         {
           id: 4,

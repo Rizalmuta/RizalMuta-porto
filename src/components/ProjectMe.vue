@@ -52,7 +52,7 @@
               <div class="card-overlay">
                 <div class="overlay-actions">
                   <button class="action-btn" @click="viewDetails(project)">
-                    <i class="ph ph-eye"></i> View Details
+                    <i class="ph ph-eye"></i> Views Only
                   </button>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default {
         {
           id: 1,
           category: "Web",
-          title: "Fuel Purchases Website",
+          title: "Fuel Purchases Website - School Project",
           description: "A website for buying fuel with easy transactions and fuel price information",
           image: "/Assets/shell.jpg",
           tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
@@ -90,7 +90,7 @@ export default {
         {
           id: 2,
           category: "Web",
-          title: "Motorbike Rental website",
+          title: "Motorbike Rental website - School Project",
           description: "An online motorbike rental website with booking and payment features.",
           image: "/Assets/RentalMotor.jpg",
           tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
@@ -98,16 +98,25 @@ export default {
         {
           id: 3,
           category: "Web",
-          title: "IndoJune cashier website",
+          title: "IndoJune cashier website - School Project",
           description: "A cashier system for managing products, sales transactions, and reports.",
           image: "/Assets/kasir-app.jpg",
           tags: ["PHP", "Laravel", "Bootstrap", "CSS", "MySQL"],
+        },
+
+          {
+          id: 4,
+          category: "Web",
+          title: "Haihai Website - Internship Project",
+          description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
+          image: "/Assets/haihai-web.jpg",
+          tags: ["Laravel", "Slicing"],
         },
         // Mobile Projects
         {
           id: 4,
           category: "Mobile",
-          title: "Court Booking App",
+          title: "Court Booking App - School Project",
           description: "A mobile app for booking sports courts with a clean and modern design.",
           image: "/Assets/court-design.jpg",
           tags: ["Flutter", "Figma", "API"],
@@ -115,7 +124,7 @@ export default {
         {
           id: 5,
           category: "Mobile",
-          title: "Haihai Chat Box App",
+          title: "Haihai Chat Box App - Internship Project",
           description: "A chat application with modern design and smooth user experience.",
           image: "/Assets/haihai-home.jpg",
           tags: ["Flutter", "Figma", "API"],
@@ -123,7 +132,7 @@ export default {
         {
           id: 6,
           category: "Mobile",
-          title: "WCP Mobile App",
+          title: "WCP Mobile App - Internship Project",
           description: "A mobile app designed to help manage company operations efficiently",
           image: "/Assets/wcp-slash.jpg",
           tags: ["Flutter", "Figma", "API"],
@@ -131,7 +140,7 @@ export default {
         {
           id: 7,
           category: "Mobile",
-          title: "SnapFlow App",
+          title: "SnapFlow App - Internship Project",
           description: "A modern mobile app prototype focused on smooth and simple interactions.",
           image: "/Assets/snap-slash.jpg",
           tags: ["Flutter", "Figma"],
@@ -139,15 +148,15 @@ export default {
         {
           id: 8,
           category: "Mobile",
-          title: "Yantek App",
-          description: "A task management app for field workers to handle daily jobs easily.",
+          title: "Yantek App - Internship Project",
+          description: "A vehicle monitoring app for tracking incoming and outgoing vehicles efficiently.",
           image: "/Assets/yantek-home.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 9,
           category: "Mobile",
-          title: "Weather App",
+          title: "Weather App - School Project",
           description: "A weather application that shows real-time weather information and forecasts.",
           image: "/Assets/Weather-App.jpg",
           tags: ["Flutter", "Figma", "API"],

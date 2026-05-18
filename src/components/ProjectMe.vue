@@ -109,7 +109,7 @@ export default {
           category: "Web",
           title: "Haihai Website - Internship Project",
           description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
-          image: "/Assets/haihai-web.jpg",
+          image: "/Assets/haihai-website.jpg",
           tags: ["Laravel", "Slicing"],
         },
         // Mobile Projects

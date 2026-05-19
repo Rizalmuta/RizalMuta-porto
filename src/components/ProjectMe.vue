@@ -126,7 +126,7 @@ export default {
           category: "Mobile",
           title: "Haihai Chat Box App - Internship Project",
           description: "A chat application with modern design and smooth user experience.",
-          image: "/Assets/haihai-chat.jpg",
+          image: "/Assets/chat-box.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {

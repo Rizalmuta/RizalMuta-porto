@@ -126,7 +126,7 @@ export default {
           category: "Mobile",
           title: "Haihai Chat Box App - Internship Project",
           description: "A chat application with modern design and smooth user experience.",
-          image: "/Assets/haihai-home.jpg",
+          image: "/Assets/haihai-chat.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {
@@ -134,7 +134,7 @@ export default {
           category: "Mobile",
           title: "WCP Mobile App - Internship Project",
           description: "A mobile app designed to help manage company operations efficiently",
-          image: "/Assets/wcp-log.jpg",
+          image: "/Assets/wcp-login.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {

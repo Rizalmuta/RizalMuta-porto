@@ -134,7 +134,7 @@ export default {
           category: "Mobile",
           title: "WCP Mobile App - Internship Project",
           description: "A mobile app designed to help manage company operations efficiently",
-          image: "/Assets/wcp-slash.jpg",
+          image: "/Assets/wcp-log.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {

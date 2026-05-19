@@ -109,7 +109,7 @@ export default {
           category: "Web",
           title: "Haihai Website - Internship Project",
           description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
-          image: "/Assets/haihai-web.jpg",
+          image: "/Assets/website-hai.jpg",
           tags: ["Laravel", "Slicing"],
         },
         // Mobile Projects
@@ -134,7 +134,7 @@ export default {
           category: "Mobile",
           title: "WCP Mobile App - Internship Project",
           description: "A mobile app designed to help manage company operations efficiently",
-          image: "/Assets/wcp-login.jpg",
+          image: "/Assets/login-wcp.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {

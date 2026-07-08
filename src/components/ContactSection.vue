@@ -54,7 +54,22 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-inner">
-        <p class="footer-quote">"Simplicity is the ultimate sophistication."</p>
+        <!-- Hadis Kesederhanaan -->
+        <p
+          class="hadith-arabic"
+          dir="rtl"
+          style="font-size: 1.3rem; margin-bottom: 5px"
+        >
+          إِنَّ الْبَذَاذَةَ مِنَ الإِيمَانِ
+        </p>
+        <p class="footer-quote">
+          "Verily, simplicity is part of faith."
+          <br />
+          <span style="font-size: 0.85rem; opacity: 0.7"
+            >(HR. Ibnu Majah No. 4118)</span
+          >
+        </p>
+
         <p class="copyright">&copy; 2026 Rizal Mutakin. All rights reserved.</p>
       </div>
     </footer>

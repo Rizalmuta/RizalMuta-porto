@@ -3,10 +3,12 @@
     <div class="home-inner">
       <div class="hero-content">
         <h2 class="greeting fade-in">Hello, I'm Muhamad Rizal Mutakin</h2>
-        <h1 class="hero-title slide-up">Frontend & Mobile<br />Developer.</h1>
+        <h1 class="hero-title slide-up">
+          Mobile & Web Developer<br />QA Enthusiast.
+        </h1>
         <p class="hero-desc slide-up delay-1">
-          Creating clean, modern, and user-friendly digital experiences.
-          <br />Focused on responsive design and smooth user experiences.
+          Developing high-quality web and mobile experiences.
+          <br />Bridging clean development with precise quality assurance.
         </p>
 
         <div class="cta-row slide-up delay-2">
@@ -14,7 +16,7 @@
             <span>View Projects</span>
             <i class="ph ph-arrow-right"></i>
           </button>
-          <a href="Cv.pdf" target="_blank" class="btn btn-secondary">
+          <a href="CV.pdf" target="_blank" class="btn btn-secondary">
             <span>Download CV</span>
             <i class="ph ph-download-simple"></i>
           </a>

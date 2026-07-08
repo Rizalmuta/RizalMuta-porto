@@ -103,62 +103,54 @@ export default {
           image: "/Assets/kasir-app.jpg",
           tags: ["PHP", "Laravel", "Bootstrap", "CSS", "MySQL"],
         },
-
-          {
+        {
           id: 4,
           category: "Web",
           title: "Haihai Website - Internship Project",
           description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
           image: "/Assets/website-hai.jpg",
-          tags: ["Laravel", "Slicing"],
+          tags: ["Laravel", "Figma", "database", "Ui/UX"],
         },
         // Mobile Projects
         {
-          id: 4,
+          id: 5,
           category: "Mobile",
           title: "Court Booking App - School Project",
           description: "A mobile app for booking sports courts with a clean and modern design.",
-          image: "/Assets/court-design.jpg",
-          tags: ["Flutter", "Figma", "API"],
-        },
-        {
-          id: 5,
-          category: "Mobile",
-          title: "Haihai Chat Box App - Internship Project",
-          description: "A chat application with modern design and smooth user experience.",
-          image: "/Assets/chat-box.jpg",
+          image: "/Assets/Booking-mobile.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
         {
           id: 6,
           category: "Mobile",
-          title: "WCP Mobile App - Internship Project",
-          description: "A mobile app designed to help manage company operations efficiently",
-          image: "/Assets/login-wcp.jpg",
-          tags: ["Flutter", "Figma", "API"],
+          title: "Haihai Chat Box App - Internship Project",
+          description: "A chat application with modern design and smooth user experience.",
+          image: "/Assets/haihai-mobile.jpg",
+          tags: ["Flutter", "Figma", "API", "Postman"],
         },
         {
           id: 7,
           category: "Mobile",
-          title: "SnapFlow App - Internship Project",
-          description: "A modern mobile app prototype focused on smooth and simple interactions.",
-          image: "/Assets/snap-slash.jpg",
-          tags: ["Flutter", "Figma"],
+          title: "WCP Mobile App - Internship Project",
+          description: "A mobile app designed to help manage company operations efficiently",
+          image: "/Assets/Wcp-mobile.jpg",
+          tags: ["Flutter", "Figma", "API",],
         },
+
         {
           id: 8,
           category: "Mobile",
           title: "Yantek App - Internship Project",
           description: "A vehicle monitoring app for tracking incoming and outgoing vehicles efficiently.",
-          image: "/Assets/yantek-home.jpg",
-          tags: ["Flutter", "Figma", "API"],
+          image: "/Assets/yantek-mobile.jpg",
+          tags: ["Flutter", "Figma", "API",],
         },
         {
           id: 9,
           category: "Mobile",
-          title: "Weather App - School Project",
-          description: "A weather application that shows real-time weather information and forecasts.",
-          image: "/Assets/Weather-App.jpg",
+          title: "School Guest Book App - School Project",
+          description: "A collaborative school guest book application to manage visitor entries..",
+          image: "/Assets/Guest-mobile.jpg",
           tags: ["Flutter", "Figma", "API"],
         },
       ],
@@ -235,14 +227,10 @@ export default {
   gap: 30px;
 }
 
-/* Web Grid - Landscape */
-.web-grid {
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-}
-
-/* Mobile Grid - Portrait */
+/* Web Grid & Mobile Grid - SAMA ukurannya */
+.web-grid,
 .mobile-grid {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
 /* Card Style Umum */
@@ -262,14 +250,16 @@ export default {
 
 .card-image-wrapper {
   position: relative;
-  width: 110%;
-  padding-top: 70%; /* Landscape untuk Web */
+  width: 100%; /* diperbaiki dari 110% -> 100% agar tidak overflow */
+  padding-top: 70%; /* Landscape, dipakai untuk Web & Mobile */
   overflow: hidden;
   background: var(--bg-tertiary);
 }
 
+/* mobile-image-wrapper sengaja dikosongkan / disamakan dengan .card-image-wrapper
+   supaya rasio gambar Mobile sama persis dengan Web (landscape 70%) */
 .mobile-image-wrapper {
-  padding-top: 158%; /* Portrait lebih tinggi untuk Mobile App */
+  padding-top: 70%;
 }
 
 .card-image {
@@ -402,11 +392,9 @@ export default {
   }
 }
 
-@media (min-width: 769px) {
-  .mobile-image-wrapper {
-    padding-top: 108%; /* Sedikit lebih pendek di desktop agar tetap rapi */
-  }
-}
+/* Catatan: override khusus desktop untuk mobile-image-wrapper
+   (padding-top: 108%) telah dihapus, karena Web & Mobile
+   sekarang menggunakan rasio yang sama (70%) di semua ukuran layar. */
 
 /* Vue Transition (opsional) */
 .project-list-enter-active,

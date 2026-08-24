@@ -2,13 +2,11 @@
   <section class="portfolio-section" id="project">
     <div class="portfolio-inner">
 
-      <!-- Section Header -->
       <div class="section-header">
         <h2 class="section-title">Selected Works</h2>
         <div class="section-line"></div>
       </div>
 
-      <!-- ==================== WEB PROJECTS ==================== -->
       <div class="category-section">
         <h3 class="category-title">Web Development</h3>
         <div class="projects-grid web-grid">
@@ -38,7 +36,6 @@
         </div>
       </div>
 
-      <!-- ==================== MOBILE PROJECTS ==================== -->
       <div class="category-section">
         <h3 class="category-title">Mobile Applications</h3>
         <div class="projects-grid mobile-grid">
@@ -78,22 +75,21 @@ export default {
   data() {
     return {
       projects: [
-        // Web Projects
         {
           id: 1,
           category: "Web",
           title: "Fuel Purchases Website - School Project",
-          description: "A website for buying fuel with easy transactions and fuel price information",
-          image: "/Assets/shell.jpg",
-          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
+          description: "A website for buying fuel with easy transactions and fuel price information.",
+          image: "/Assets/Shell.jpg",
+          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap", "Google Fonts"],
         },
         {
           id: 2,
           category: "Web",
           title: "Motorbike Rental website - School Project",
           description: "An online motorbike rental website with booking and payment features.",
-          image: "/Assets/RentalMotor.jpg",
-          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap"],
+          image: "/Assets/MotoRent.jpg",
+          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap", "Font Awesome", "Google Fonts"],
         },
         {
           id: 3,
@@ -105,6 +101,15 @@ export default {
         },
         {
           id: 4,
+          category: "Web",
+          title: "Secure Coding Website - School Project",
+          description: "A website showcasing secure coding practices and best practices for web development.",
+          image: "/Assets/SecureCoding.jpg",
+          tags: ["Laravel", "Database", "Boostrap","MySQL"],
+        },
+
+          {
+          id: 5,
           category: "Web",
           title: "Haihai Website - Internship Project",
           description: "Redesigned and implemented the sign-up page interface to improve visual appearance and user experience.",
@@ -132,7 +137,7 @@ export default {
           id: 7,
           category: "Mobile",
           title: "WCP Mobile App - Internship Project",
-          description: "A mobile app designed to help manage company operations efficiently",
+          description: "A mobile app designed to help manage company operations efficiently.",
           image: "/Assets/Wcp-mobile.jpg",
           tags: ["Flutter", "Figma", "API",],
         },
@@ -149,7 +154,7 @@ export default {
           id: 9,
           category: "Mobile",
           title: "School Guest Book App - School Project",
-          description: "A collaborative school guest book application to manage visitor entries..",
+          description: "A collaborative school guest book application to manage visitor entries.",
           image: "/Assets/Guest-mobile.jpg",
           tags: ["Flutter", "Figma", "API"],
         },

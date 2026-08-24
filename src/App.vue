@@ -10,6 +10,7 @@
         <main v-if="$route.path === '/'">
           <HomeSection />
           <AboutMe />
+          <ExperienceSection />
           <ProjectMe />
           <CertificateSection />
           <ContactSection />
@@ -25,6 +26,7 @@
   import ContactSection    from './components/ContactSection.vue'
   import ProjectMe         from './components/ProjectMe.vue'
   import CertificateSection from './components/CertificateSection.vue'
+  import ExperienceSection from './components/ExperienceSection.vue'
 
   export default {
     name: 'App',
@@ -35,6 +37,7 @@
       ContactSection,
       ProjectMe,
       CertificateSection,
+      ExperienceSection,
     },
     data() {
       return {

@@ -84,7 +84,7 @@ export default {
             { name: 'GitLab', icon: 'devicon-gitlab-plain' },
             { name: 'Postman', icon: 'devicon-postman-plain' },
             { name: 'Trello', icon: 'devicon-trello-plain' },
-            { name: 'Visual Studio Code', icon: 'devicon-visualstudio-plain' },
+            { name: 'Notion', icon: 'devicon-notion-plain' },
           ]
         }
       ]

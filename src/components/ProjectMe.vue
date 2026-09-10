@@ -89,7 +89,7 @@ export default {
           title: "Motorbike Rental website - School Project",
           description: "An online motorbike rental website with booking and payment features.",
           image: "/Assets/MotoRent.jpg",
-          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap", "Font Awesome", "Google Fonts"],
+          tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap", "Google Fonts"],
         },
         {
           id: 3,
@@ -123,7 +123,7 @@ export default {
           title: "Court Booking App - School Project",
           description: "A mobile app for booking sports courts with a clean and modern design.",
           image: "/Assets/Booking-mobile.jpg",
-          tags: ["Flutter", "Figma", "API"],
+          tags: ["Flutter", "Figma",],
         },
         {
           id: 6,
@@ -131,7 +131,7 @@ export default {
           title: "Haihai Chat Box App - Internship Project",
           description: "A chat application with modern design and smooth user experience.",
           image: "/Assets/haihai-mobile.jpg",
-          tags: ["Flutter", "Figma", "API", "Postman"],
+          tags: ["Flutter", "Figma", "API", "Postman", "Database", "Rest API"],
         },
         {
           id: 7,
@@ -139,7 +139,7 @@ export default {
           title: "WCP Mobile App - Internship Project",
           description: "A mobile app designed to help manage company operations efficiently.",
           image: "/Assets/Wcp-mobile.jpg",
-          tags: ["Flutter", "Figma", "API",],
+          tags: ["Flutter", "Figma", "API", "Postman", "Database", "Rest API"],
         },
 
         {
@@ -148,7 +148,7 @@ export default {
           title: "Yantek App - Internship Project",
           description: "A vehicle monitoring app for tracking incoming and outgoing vehicles efficiently.",
           image: "/Assets/yantek-mobile.jpg",
-          tags: ["Flutter", "Figma", "API",],
+          tags: ["Flutter", "Figma", "API", "Database", "Rest API"],
         },
         {
           id: 9,
@@ -156,7 +156,7 @@ export default {
           title: "School Guest Book App - School Project",
           description: "A collaborative school guest book application to manage visitor entries.",
           image: "/Assets/Guest-mobile.jpg",
-          tags: ["Flutter", "Figma", "API"],
+          tags: ["Flutter", "Figma",],
         },
       ],
     };

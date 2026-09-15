@@ -16,7 +16,7 @@
             <span>View Projects</span>
             <i class="ph ph-arrow-right"></i>
           </button>
-          <a href="CV.pdf" target="_blank" class="btn btn-secondary">
+          <a href="CV_Muhamad_Rizal_Mutakin.pdf" target="_blank" class="btn btn-secondary">
             <span>Download CV</span>
             <i class="ph ph-download-simple"></i>
           </a>

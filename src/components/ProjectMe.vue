@@ -80,7 +80,7 @@ export default {
           category: "Web",
           title: "Fuel Purchases Website - School Project",
           description: "A website for buying fuel with easy transactions and fuel price information.",
-          image: "/Assets/Shell.jpg",
+          image: "/Assets/Shell-web.jpg",
           tags: ["PHP", "OOP", "HTML", "CSS", "Bootstrap", "Google Fonts"],
         },
         {
